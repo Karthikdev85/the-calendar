@@ -6,10 +6,18 @@
 }
 
 :root {
-  --blue-background: hsl(200, 80%, 50%);
+  /* --blue-background: hsl(200, 80%, 50%); */
+  --blue-background: #42a5f5;
   --red-background: hsl(0, 75%, 60%);
-  --green-background: hsl(150, 80%, 30%);
-  --border-color: #dadce0;
+  --green-background: hsl(150, 89%, 25%);
+  --purple-background: #7e57c2;
+  --indigo-background: #5c6bc0;
+  --pink-background: #f06292;
+  --grey-background: #78909c;
+  --orange-background: #ff9a20;
+  --cyan-background: #0097a7;
+  --lime-background: #9e9d24;
+  --border-color: #cfd0d3;
   --border-size: 1px;
   --day-padding: 0.25rem;
 }
@@ -51,7 +59,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 250ms;
   color: #333;
@@ -271,6 +279,34 @@ body {
   background-color: var(--green-background);
 }
 
+.all-day-event.indigo {
+  background-color: var(--indigo-background);
+}
+
+.all-day-event.pink {
+  background-color: var(--pink-background);
+}
+
+.all-day-event.grey {
+  background-color: var(--grey-background);
+}
+
+.all-day-event.purple {
+  background-color: var(--purple-background);
+}
+
+.all-day-event.orange {
+  background-color: var(--orange-background);
+}
+
+.all-day-event.cyan {
+  background-color: var(--cyan-background);
+}
+
+.all-day-event.lime {
+  background-color: var(--lime-background);
+}
+
 .events {
   display: flex;
   flex-direction: column;
@@ -322,7 +358,7 @@ body {
   border-radius: 0.5rem;
   padding: 1rem;
   z-index: 1;
-  min-width: 300px;
+  min-width: 380px;
   max-width: 95%;
   animation: pop-in 250ms forwards;
   scale: 0;
@@ -362,6 +398,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  font-size: 1.1em;
 }
 
 .form-group.checkbox {
@@ -372,6 +409,7 @@ body {
 .form-group.checkbox input {
   cursor: pointer;
   margin-right: 0;
+  font-size: 1rem;
 }
 
 .form-group.checkbox label {
@@ -385,12 +423,12 @@ body {
 
 .form-group label {
   font-weight: bold;
-  font-size: 0.8rem;
   color: #777;
 }
 
 .form-group input {
   padding: 0.25rem 0.5rem;
+  font-size: 1rem;
 }
 
 .row {
@@ -436,10 +474,12 @@ body {
 
 .color-radio:checked + label::before {
   opacity: 1;
+  border: 1px solid #364852;
+  outline: 1.5px solid #354750;
 }
 
 .color-radio:focus + label::before {
-  outline: 1px solid black;
+  outline: 1px solid #263238;
 }
 
 .color-radio[value="blue"] + label::before {
@@ -452,4 +492,32 @@ body {
 
 .color-radio[value="green"] + label::before {
   background-color: var(--green-background);
+}
+
+.color-radio[value="purple"] + label::before {
+  background-color: var(--purple-background);
+}
+
+.color-radio[value="indigo"] + label::before {
+  background-color: var(--indigo-background);
+}
+
+.color-radio[value="pink"] + label::before {
+  background-color: var(--pink-background);
+}
+
+.color-radio[value="grey"] + label::before {
+  background-color: var(--grey-background);
+}
+
+.color-radio[value="orange"] + label::before {
+  background-color: var(--orange-background);
+}
+
+.color-radio[value="cyan"] + label::before {
+  background-color: var(--cyan-background);
+}
+
+.color-radio[value="lime"] + label::before {
+  background-color: var(--lime-background);
 }
