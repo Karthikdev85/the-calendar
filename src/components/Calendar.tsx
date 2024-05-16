@@ -191,7 +191,7 @@ function CalendarDay({
 
 type ViewMoreCalendarEventsModalProps = {
   events: Event[];
-  setIsViewMoreEventModalOpen: null | ((v: boolean) => void);
+  setIsViewMoreEventModalOpen: (v: boolean) => void;
 } & Omit<ModalProps, "children">;
 
 function ViewMoreCalendarEventsModal({
@@ -296,9 +296,9 @@ function EventFormModal({
   const [selectedColor, setSelectedColor] = useState(
     event?.color || EVENT_COLORS[0]
   );
-  const [isAllDayChecked, setIsAllDayChecked] = useState(
-    event?.allDay || false
-  );
+  // const [isAllDayChecked, setIsAllDayChecked] = useState(
+  //   event?.allDay || false
+  // );
   const [startTime, setStartTime] = useState(event?.startTime || "");
   const endTimeRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
@@ -318,27 +318,41 @@ function EventFormModal({
     };
     let newEvent: UnionOmit<Event, "id">;
 
-    if (isAllDayChecked) {
-      newEvent = {
-        ...commonProps,
-        allDay: true,
-      };
-    } else {
-      if (
-        startTime == null ||
-        startTime === "" ||
-        endTime == null ||
-        endTime === ""
-      ) {
-        return;
-      }
-      newEvent = {
-        ...commonProps,
-        allDay: false,
-        startTime,
-        endTime,
-      };
+    // if (isAllDayChecked) {
+    //   newEvent = {
+    //     ...commonProps,
+    //     allDay: true,
+    //   };
+    // } else {
+    //   if (
+    //     startTime == null ||
+    //     startTime === "" ||
+    //     endTime == null ||
+    //     endTime === ""
+    //   ) {
+    //     return;
+    //   }
+    //   newEvent = {
+    //     ...commonProps,
+    //     allDay: false,
+    //     startTime,
+    //     endTime,
+    //   };
+    // }
+    if (
+      startTime == null ||
+      startTime === "" ||
+      endTime == null ||
+      endTime === ""
+    ) {
+      return;
     }
+    newEvent = {
+      ...commonProps,
+      allDay: false,
+      startTime,
+      endTime,
+    };
 
     modalProps.onClose();
     onSubmit(newEvent);
@@ -379,7 +393,8 @@ function EventFormModal({
             <input
               value={startTime}
               onChange={(e) => setStartTime(e.target.value)}
-              required={!isAllDayChecked}
+              required={true}
+              // required={!isAllDayChecked}
               // disabled={isAllDayChecked}
               type="time"
               id={`${formId}-start-time`}
@@ -391,7 +406,8 @@ function EventFormModal({
               ref={endTimeRef}
               defaultValue={event?.endTime}
               min={startTime}
-              required={!isAllDayChecked}
+              required={true}
+              // required={!isAllDayChecked}
               // disabled={isAllDayChecked}
               type="time"
               id={`${formId}-end-time`}
