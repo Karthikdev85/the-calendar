@@ -1,9 +1,8 @@
 # Calendly App
 
 - A streamlined client-side calendar application designed for users to seamlessly add tasks and events, as well as conveniently drag and drop events between different days.
-![alt text](<Screenshot 2024-11-06 113451-1.png>)
+![alt text](<Screenshot 2024-11-06 113451.png>)
 ![alt text](<Screenshot 2024-11-06 113509.png>)
-
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
