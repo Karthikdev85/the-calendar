@@ -24,6 +24,7 @@
 
 body {
   margin: 0;
+  padding: 0 3rem;
 }
 
 #root {
@@ -33,7 +34,7 @@ body {
 }
 
 .calendar {
-  height: 100%;
+  height: calc(100% - 2.5rem);
   display: flex;
   flex-direction: column;
   color: #333;
