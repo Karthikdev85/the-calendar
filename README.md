@@ -1,7 +1,7 @@
 # Calendly App
 
 - A streamlined client-side calendar application designed for users to seamlessly add tasks and events, as well as conveniently drag and drop events between different days.
-![alt text](<Screenshot 2024-11-06 114442.png>)
+![alt text](<Screenshot 2024-11-06 113451-1.png>)
 ![alt text](<Screenshot 2024-11-06 113509.png>)
 
 Currently, two official plugins are available:
